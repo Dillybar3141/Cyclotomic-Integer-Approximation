@@ -14,16 +14,16 @@ $z = c_0\zeta_n^0 + c_1\zeta_n^1 + \cdots + c_{n - 1}\zeta_n^{n - 1}$
 where $c_0, c_1, \ldots, c_{n - 1}$ are unknown integers, can we find or at least approximate the $c_0, c_1, \ldots, c_{n - 1}$? 
 To our knowledge there exists no analytical method.
 In this code we implement the LLL algorithm \[Lenstra, Lenstra, Lovász (1982)\] to recover $c_0, c_1, \ldots, c_{n - 1}$ and test its success rate against various random distirbutions over the cyclotomic integers.
-We also include attempts to implement and generalize the approximation algorithm proposed in \[Shokrollahi & Stemann (1996)\] for $n$ that are powers of 2.
+We also include attempts to implement and generalize an approximation algorithm for complex numbers by cyclotomic integers \[Shokrollahi & Stemann (1996)\] for $n$ that are powers of 2.
 
 For questions reach out to whpan \[at\] utexas \[dot\] edu or droscow \[at\] purdue \[dot\] edu.
 
 ## Instructions
 
-The code requires NumPy and the dependencies for [SageMath](https://doc.sagemath.org/html/en/installation/).
+The code uses NumPy, [gmpy2](https://gmpy2.readthedocs.io/en/latest/), [fpylll](https://github.com/fplll/fpylll), and [SageMath](https://doc.sagemath.org/html/en/installation/).
 
 `lll.py` contains all helper functions used in testing. 
-We plot testing data in `examples.ipynb`, which the user is free to experiment with.
+We plot testing data in `examples.ipynb`, which any user should feel free to experiment with.
 The main function to be used is `run_trials` which takes as parameters
 - `orders`: the list of `n`'s to test against.
 - `gen` and `gen_param`: selection of the random generator and its parameter.
@@ -36,4 +36,4 @@ The main function to be used is `run_trials` which takes as parameters
 
 For more guidance on best values to use see the testing data in `testing.xlsx`. 
 
-`main.ipynb` includes functions to implement a direct approximation algorithm.
+`approximation.ipynb` includes functions to implement a direct approximation algorithm and example usage.
